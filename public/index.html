@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Димитър Еленов | Актьорски студия</title>
+<meta name="description" content="Актьорска школа по метода на Димитър Еленов: въображение, сценично присъствие и увереност пред публика и камера.">
+<meta name="theme-color" content="#1F3D3A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#EDE7DE;--paper:#F7F3EC;--teal:#6FAFB0;--teal2:#4F8F91;--teal3:#2F6B6D;--dark:#1F3D3A;--line:#d9d2c5;--r:22px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Raleway',sans-serif;background:var(--cream);color:var(--dark);font-size:17px;line-height:1.6}
+h1,h2,h3,h4{font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;line-height:1.05;letter-spacing:.01em}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+section{padding:96px 0}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--teal3);color:#fff;padding:15px 28px;border-radius:999px;font-weight:700;font-size:15px;transition:.25s}
+.btn:hover{background:var(--dark);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--dark);border:2px solid var(--dark)}
+.btn.ghost:hover{background:var(--dark);color:#fff}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal2);margin-bottom:14px;display:block}
+h2{font-size:clamp(36px,5.5vw,64px);margin-bottom:20px}
+.lead{max-width:640px;font-size:19px;opacity:.85}
+/* header */
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s}
+header.solid{background:rgba(237,231,222,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{font-family:'Oswald';font-weight:700;font-size:22px;text-transform:uppercase;line-height:1}
+.logo small{display:block;font:600 10px 'Raleway';letter-spacing:.3em;color:var(--teal2);margin-top:3px}
+nav ul{display:flex;gap:26px;list-style:none;font-weight:600;font-size:15px}
+nav a:hover{color:var(--teal2)}
+.burger{display:none;font-size:26px}
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 70px;background:radial-gradient(circle at 85% 20%,#cfe3e0 0,transparent 45%),var(--cream)}
+.hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+.hero h1{font-size:clamp(60px,10vw,140px);line-height:.85;margin-bottom:28px;color:var(--dark)}
+.hero h1 span{color:var(--teal2);display:block}
+.hero p{max-width:520px;font-size:19px;margin-bottom:34px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.portrait{position:relative;aspect-ratio:3/4;border-radius:200px 200px var(--r) var(--r);overflow:hidden;background:linear-gradient(160deg,var(--teal),var(--teal3));box-shadow:0 30px 70px rgba(31,61,58,.3)}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;left:-18px;bottom:36px;background:var(--dark);color:#fff;padding:14px 20px;border-radius:16px;font-weight:700;font-size:14px;max-width:210px;box-shadow:0 14px 30px rgba(0,0,0,.25)}
+.badge b{display:block;font:700 28px 'Oswald'}
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+.card{background:var(--paper);border-radius:var(--r);padding:32px;border:1px solid var(--line);transition:.3s;display:flex;flex-direction:column;gap:12px}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(31,61,58,.12)}
+.card .ic{font-size:30px}
+.card h3{font-size:26px}
+.card.hl{background:var(--teal3);color:#fff;border-color:var(--teal3)}
+.card a.more{margin-top:auto;font-weight:700;color:var(--teal2);font-size:14px}
+.card.hl a.more{color:#cfe9e8}
+/* videos */
+.dark{background:var(--dark);color:#fff}
+.dark .eyebrow{color:var(--teal)}
+.vids{display:grid;grid-template-columns:1.4fr 1fr;gap:22px;margin-top:46px}
+.vid{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:16/10;background:var(--teal3);display:block}
+.vid:first-child{grid-row:span 2;aspect-ratio:auto;min-height:420px}
+.vid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.8;transition:.4s}
+.vid:hover img{transform:scale(1.05);opacity:1}
+.vid .cap{position:absolute;left:0;right:0;bottom:0;padding:22px;background:linear-gradient(transparent,rgba(0,0,0,.8))}
+.vid .cap b{font:700 22px 'Oswald';text-transform:uppercase;display:block}
+.vid .cap small{opacity:.8}
+.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:70px;height:70px;border-radius:50%;background:var(--teal);display:grid;place-items:center;font-size:22px;color:#fff;box-shadow:0 0 0 0 rgba(111,175,176,.6);animation:rip 2.4s infinite}
+@keyframes rip{to{box-shadow:0 0 0 22px rgba(111,175,176,0)}}
+/* programs */
+details{border-bottom:1px solid var(--line);padding:22px 0}
+details summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font:700 clamp(26px,4vw,44px) 'Oswald';text-transform:uppercase;transition:.2s}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";font-size:36px;color:var(--teal2);transition:.3s}
+details[open] summary::after{transform:rotate(45deg)}
+details summary:hover{color:var(--teal2)}
+details .in{padding-top:14px;display:flex;gap:30px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+details .in p{max-width:640px}
+/* summer */
+.summer{background:var(--teal);border-radius:60px 0 60px 0;padding:60px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;color:var(--dark)}
+.summer h2{color:#fff}
+.summer .btn{background:var(--dark)}
+.summer .btn:hover{background:#fff;color:var(--dark)}
+/* team */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+.tm .ph{aspect-ratio:4/5;border-radius:var(--r);background:linear-gradient(160deg,var(--teal),var(--teal3));overflow:hidden;margin-bottom:16px}
+.tm .ph img{width:100%;height:100%;object-fit:cover;filter:saturate(.85);transition:.4s}
+.tm:hover .ph img{transform:scale(1.04)}
+.tm h4{font-size:24px}.tm p{font-size:15px;opacity:.8}
+/* media */
+.media{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+.media a{background:var(--paper);border-radius:var(--r);padding:26px;border:1px solid var(--line);display:flex;flex-direction:column;gap:10px;transition:.3s}
+.media a:hover{border-color:var(--teal2);transform:translateY(-4px)}
+.media small{font-weight:700;color:var(--teal2);letter-spacing:.1em;text-transform:uppercase;font-size:12px}
+.media b{font:700 21px/1.2 'Oswald';text-transform:uppercase}
+/* contact + footer */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.contact .info a{display:block;font:700 clamp(24px,3.4vw,38px) 'Oswald';margin:6px 0 20px}
+.contact .info a:hover{color:var(--teal)}
+.soc{display:flex;gap:10px;flex-wrap:wrap}
+.soc a{font:700 13px 'Raleway';border:1px solid rgba(255,255,255,.3);padding:9px 16px;border-radius:999px;margin:0}
+.soc a:hover{background:var(--teal);color:var(--dark)}
+.form{display:flex;flex-direction:column;gap:14px}
+.form input,.form textarea{padding:16px 18px;border-radius:14px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.07);color:#fff;font:inherit;outline:none}
+.form input::placeholder,.form textarea::placeholder{color:#a9c4c1}
+.form input:focus,.form textarea:focus{border-color:var(--teal)}
+.form .btn{background:var(--teal);color:var(--dark);justify-content:center}
+.form .btn:hover{background:#fff}
+.ok{display:none;background:var(--teal);color:var(--dark);padding:14px 18px;border-radius:14px;font-weight:700}
+footer{background:#142826;color:#a9c4c1;padding:26px 0;font-size:14px;text-align:center}
+/* chat */
+#chatBtn{position:fixed;right:22px;bottom:22px;z-index:90;width:64px;height:64px;border-radius:50%;background:var(--teal3);color:#fff;box-shadow:0 10px 26px rgba(47,107,109,.5);display:grid;place-items:center;font-size:28px;transition:.2s}
+#chatBtn:hover{transform:scale(1.07);background:var(--dark)}
+#chatBtn i{position:absolute;top:6px;right:6px;width:14px;height:14px;background:#2fcf7a;border:2px solid #fff;border-radius:50%}
+#bubble{position:fixed;right:96px;bottom:34px;z-index:90;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.18);padding:12px 16px;border-radius:16px 16px 4px 16px;max-width:250px;font-size:14px;font-weight:600;display:none;cursor:pointer}
+#chat{position:fixed;right:22px;bottom:98px;z-index:95;width:380px;max-width:calc(100vw - 24px);height:560px;max-height:calc(100vh - 120px);background:#fff;border-radius:22px;box-shadow:0 24px 60px rgba(20,40,38,.4);display:none;flex-direction:column;overflow:hidden}
+#chat.open{display:flex;animation:pop .22s ease}
+@keyframes pop{from{opacity:0;transform:translateY(10px) scale(.97)}}
+.ch-head{background:linear-gradient(135deg,var(--dark),var(--teal3));color:#fff;padding:14px 16px;display:flex;align-items:center;gap:12px}
+.ch-av{width:42px;height:42px;border-radius:50%;background:var(--cream);color:var(--dark);display:grid;place-items:center;font:700 20px 'Oswald'}
+.ch-head b{display:block;font-size:15px}.ch-head small{opacity:.8;font-size:12px}
+.ch-x{margin-left:auto;background:rgba(255,255,255,.16);width:32px;height:32px;border-radius:50%;color:#fff}
+.ch-body{flex:1;overflow-y:auto;padding:16px;background:var(--paper);display:flex;flex-direction:column;gap:10px}
+.msg{max-width:86%;padding:10px 14px;border-radius:16px;font-size:14.5px;line-height:1.45;animation:pop .18s ease;white-space:pre-line}
+.msg.bot{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+.msg.me{background:var(--teal3);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.typing{display:flex;gap:4px;padding:12px 14px;background:#fff;border:1px solid var(--line);border-radius:16px;align-self:flex-start}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--teal);animation:bl 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes bl{50%{opacity:.25}}
+.qr{display:flex;flex-wrap:wrap;gap:8px}
+.qr button{background:#fff;border:1px solid var(--teal2);color:var(--teal3);padding:8px 14px;border-radius:999px;font-weight:700;font-size:13px}
+.qr button:hover{background:var(--teal3);color:#fff}
+.lead-form{display:flex;flex-direction:column;gap:8px;background:#fff;border:1px solid var(--line);padding:14px;border-radius:14px}
+.lead-form input{padding:11px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:14.5px;outline:none}
+.lead-form button{background:var(--teal3);color:#fff;padding:11px;border-radius:10px;font-weight:700}
+.ch-foot{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line);background:#fff}
+.ch-foot input{flex:1;padding:12px 14px;border:1px solid var(--line);border-radius:999px;font:inherit;font-size:14.5px;outline:none}
+.ch-foot input:focus{border-color:var(--teal2)}
+.ch-foot button{background:var(--teal3);color:#fff;width:44px;height:44px;border-radius:50%;font-size:18px}
+.ch-pw{text-align:center;font-size:11px;color:#8aa;padding:0 0 8px;background:#fff}
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:.8s}.rv.in{opacity:1;transform:none}
+@media(max-width:900px){
+ section{padding:64px 0}
+ nav ul{display:none;position:absolute;top:76px;left:0;right:0;background:var(--cream);flex-direction:column;padding:20px 22px;gap:16px;box-shadow:0 12px 24px rgba(0,0,0,.1)}
+ nav ul.open{display:flex}.burger{display:block}
+ .hero .grid,.cards,.vids,.team,.media,.contact,.summer{grid-template-columns:1fr}
+ .vid:first-child{min-height:260px;grid-row:auto}
+ .portrait{max-width:340px;margin:0 auto}.badge{left:0}
+ .summer{padding:34px 24px;border-radius:40px 0 40px 0}
+ .hdr-cta{display:none}
+}
+@media(max-width:560px){
+ #chat{left:0;right:0;bottom:0;width:100%;max-width:100%;height:86vh;max-height:none;border-radius:22px 22px 0 0}
+ body.chat-open #chatBtn,body.chat-open #bubble{display:none!important}
+ #bubble{right:16px;bottom:90px}
+}
+</style>
+</head>
+<body>
+<header id="hd"><div class="wrap nav">
+ <a href="#top" class="logo">Димитър Еленов<small>АКТЬОРСКИ СТУДИЯ</small></a>
+ <nav><ul id="menu">
+  <li><a href="#about">За Димитър</a></li><li><a href="#video">В кадър</a></li><li><a href="#studio">Студия</a></li>
+  <li><a href="#summer">Лятна академия</a></li><li><a href="#team">Преподаватели</a></li><li><a href="#contact">Контакти</a></li>
+ </ul></nav>
+ <a class="btn hdr-cta" href="https://forms.gle/w7MCBQm67aCerYEH6" target="_blank" rel="noopener">Безплатна репетиция</a>
+ <button class="burger" id="burger" aria-label="Меню">☰</button>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap grid">
+ <div>
+  <span class="eyebrow">Метод Димитър Еленов</span>
+  <h1>Актьорска <span>школа</span></h1>
+  <p>Практически занятия за развитие на въображението, сценичното присъствие и увереността пред публика и камера, чрез работа върху класически и съвременни текстове.</p>
+  <div class="cta">
+   <a class="btn" href="https://forms.gle/w7MCBQm67aCerYEH6" target="_blank" rel="noopener">Безплатна репетиция →</a>
+   <button class="btn ghost" id="askBtn">Питай нашия асистент</button>
+  </div>
+ </div>
+ <div class="portrait">
+  <img src="https://dimitarelenov.bg/public/assets/images/pages/delenov_600x800px_03.png" alt="Димитър Еленов" onerror="this.remove()">
+  <div class="badge"><b>НАТФИЗ</b>репетиции с негови ученици</div>
+ </div>
+</div></section>
+
+<section id="about"><div class="wrap">
+ <span class="eyebrow">За Димитър Еленов</span>
+ <h2 class="rv">Актьор, режисьор<br>и учител</h2>
+ <p class="lead rv">Български актьор, режисьор и театрален педагог с ярко присъствие на сцената и в киното. Създател на собствена система за актьорско обучение, посветена на младите таланти и високата художествена култура.</p>
+ <div class="cards">
+  <div class="card rv"><span class="ic">🎭</span><h3>Биография</h3><p>Професионалният път на Димитър Еленов като актьор, режисьор и театрален педагог.</p><a class="more" href="https://dimitarelenov.bg/biography" target="_blank" rel="noopener">Научи повече →</a></div>
+  <div class="card rv"><span class="ic">🎬</span><h3>Актьорска школа</h3><p>Актьорско майсторство по метода на Димитър Еленов, за деца, тийнейджъри и възрастни.</p><a class="more" href="https://dimitarelenov.bg/acting-school" target="_blank" rel="noopener">Научи повече →</a></div>
+  <div class="card hl rv"><span class="ic">🎓</span><h3>Преподаватели</h3><p>Репетициите се водят от негови ученици, завършили НАТФИЗ, с фокус върху физическа, говорна и обща култура.</p><a class="more" href="#team">Виж екипа →</a></div>
+ </div>
+</div></section>
+
+<section id="video" class="dark"><div class="wrap">
+ <span class="eyebrow">В кадър</span>
+ <h2 class="rv">Гледай студията<br>в действие</h2>
+ <div class="vids">
+  <a class="vid rv" href="https://www.youtube.com/watch?v=iLe7MOKxfGg" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/iLe7MOKxfGg/hqdefault.jpg" alt=""><span class="play">▶</span><span class="cap"><b>Свободен, по свободен, Димитър</b><small>Darik Plus</small></span></a>
+  <a class="vid rv" href="https://www.youtube.com/watch?v=r4boW3bv4DE" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/r4boW3bv4DE/hqdefault.jpg" alt=""><span class="play">▶</span><span class="cap"><b>Фестивал Еленов</b><small>БНТ</small></span></a>
+  <a class="vid rv" href="https://www.youtube.com/watch?v=8q12Nryoo94" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/8q12Nryoo94/hqdefault.jpg" alt=""><span class="play">▶</span><span class="cap"><b>Театрални ателиета</b><small>БНТ</small></span></a>
+ </div>
+ <p style="margin-top:28px"><a class="btn" href="https://www.youtube.com/@studiadimitarelenov" target="_blank" rel="noopener">Всички видеа</a></p>
+</div></section>
+
+<section id="studio"><div class="wrap">
+ <span class="eyebrow">Студия</span>
+ <h2 class="rv">В какво сме добри</h2>
+ <p class="lead rv">Развиваме творческите умения, сценичното присъствие и увереността пред публика.</p>
+ <div style="margin-top:40px">
+  <details open><summary>Актьорска школа</summary><div class="in"><p>Системна подготовка и практическо обучение за развитие на творческите умения, сценичното присъствие и увереността.</p><a class="btn" href="https://dimitarelenov.bg/acting-school" target="_blank" rel="noopener">Виж повече</a></div></details>
+  <details><summary>Курсове</summary><div class="in"><p>Актьорска игра, комуникация, презентация и работа с медии, чрез традиционни и съвременни методи, включително изкуствен интелект.</p><a class="btn" href="https://dimitarelenov.bg/classes" target="_blank" rel="noopener">Виж повече</a></div></details>
+  <details><summary>Съвети за актьори</summary><div class="in"><p>Техниките са основата на всяко прослушване. За да впечатлите, трябва да се подготвите и да овладеете уменията си.</p><a class="btn" href="https://dimitarelenov.bg/acting-tips" target="_blank" rel="noopener">Виж повече</a></div></details>
+  <details><summary>Как да стана актьор</summary><div class="in"><p>Кои умения са ключови за всеки актьор и как да ги развиваш, за да се подготвиш за сцената и камерата.</p><a class="btn" href="https://dimitarelenov.bg/how-to-become-an-actor" target="_blank" rel="noopener">Виж повече</a></div></details>
+  <details><summary>Изграждане на образ</summary><div class="in"><p>Висшият пилотаж на актьорската професия: интерес към психологията и дълго наблюдение на видовете характери.</p><a class="btn" href="https://dimitarelenov.bg/character-development" target="_blank" rel="noopener">Виж повече</a></div></details>
+  <details><summary>Актьорски загрявки</summary><div class="in"><p>Физическото разтоварване и загретият говорен апарат са началото на самоподготовката, работа с най-личния инструмент: тялото.</p><a class="btn" href="https://dimitarelenov.bg/acting-warm-ups" target="_blank" rel="noopener">Виж повече</a></div></details>
+ </div>
+</div></section>
+
+<section id="summer" style="padding-top:0"><div class="wrap">
+ <div class="summer rv">
+  <div><span class="eyebrow" style="color:var(--dark)">Лято 2026</span><h2>Лятна академия</h2></div>
+  <div><p style="margin-bottom:24px">Творчески ателиета и пърформънси за деца и тийнейджъри, водени от негови ученици и утвърдени творци. Чрез изкуство развиваме таланти, културни и социални умения и общуване между поколенията.</p><a class="btn" href="https://dimitarelenov.bg/summer-camp-2026" target="_blank" rel="noopener">Научи повече</a></div>
+ </div>
+</div></section>
+
+<section id="team" style="padding-top:0"><div class="wrap">
+ <span class="eyebrow">Преподаватели</span>
+ <h2 class="rv">По метода на<br>Димитър Еленов</h2>
+ <div class="team">
+  <div class="tm rv"><div class="ph"><img src="https://dimitarelenov.bg/public/assets/images/pages/RozitaElenova.jpg" alt="Розита Еленова" onerror="this.remove()"></div><h4>Розита Еленова</h4><p>Актриса, режисьор, експерт по медии и култура</p></div>
+  <div class="tm rv"><div class="ph"><img src="https://dimitarelenov.bg/public/assets/images/pages/MarlenaTodorova.jpg" alt="Марлена Тодорова" onerror="this.remove()"></div><h4>Марлена Тодорова</h4><p>Хореограф</p></div>
+  <div class="tm rv"><div class="ph"><img src="https://dimitarelenov.bg/public/assets/images/pages/AntuniPenev.jpg" alt="Антъни Пенев" onerror="this.remove()"></div><h4>Антъни Пенев</h4><p>Актьор</p></div>
+ </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+ <span class="eyebrow">Медиите за нас</span>
+ <h2 class="rv">За нас пишат</h2>
+ <div class="media">
+  <a class="rv" href="https://bnt.bg/news/filmat-svoboden-po-svoboden-dimitar-shte-bade-predstaven-na-zlatniya-riton-v380542-335204news.html?page=104" target="_blank" rel="noopener"><small>БНТ · 18.12.2024</small><b>Филмът ще бъде представен на „Златния ритон“</b><span>Към статията →</span></a>
+  <a class="rv" href="https://www.btv.bg/shows/predi-obed/videos/svoboden-po-svoboden-dimitar.html" target="_blank" rel="noopener"><small>bTV · 30.10.2024</small><b>Интервю с Розита Еленова в „Преди обед“</b><span>Към видеото →</span></a>
+  <a class="rv" href="https://www.youtube.com/watch?v=QBSUdSj0ric" target="_blank" rel="noopener"><small>БНТ · 09.02.2024</small><b>Документалният филм „Свободен, по свободен, Димитър“</b><span>Към видеото →</span></a>
+ </div>
+</div></section>
+
+<section id="contact" class="dark"><div class="wrap contact">
+ <div class="info">
+  <span class="eyebrow">Контакти</span>
+  <h2>Да се запознаем</h2>
+  <a href="tel:+359886777788">0886 777 788</a>
+  <a href="mailto:elenovd@gmail.com">elenovd@gmail.com</a>
+  <div class="soc">
+   <a href="https://www.facebook.com/studiadimitarelenov" target="_blank" rel="noopener">Facebook</a>
+   <a href="https://www.instagram.com/studiadimitarelenov/" target="_blank" rel="noopener">Instagram</a>
+   <a href="https://www.tiktok.com/@studia_dimitar_elenov" target="_blank" rel="noopener">TikTok</a>
+   <a href="https://www.youtube.com/@studiadimitarelenov" target="_blank" rel="noopener">YouTube</a>
+   <a href="https://t.me/artstudiaelenov" target="_blank" rel="noopener">Telegram</a>
+  </div>
+ </div>
+ <form class="form" id="cform">
+  <input required name="name" placeholder="Вашето име">
+  <input required name="contact" placeholder="Телефон или имейл">
+  <textarea name="msg" rows="4" placeholder="Разкажете ни за възраст, опит и цел"></textarea>
+  <button class="btn">Заявка за безплатна репетиция</button>
+  <div class="ok" id="cok">Благодарим! Ще се свържем с Вас скоро.</div>
+ </form>
+</div></section>
+</main>
+<footer><div class="wrap">© 2026 Dimitar Elenov Studios. Всички права запазени.</div></footer>
+
+<div id="bubble">Искате безплатна репетиция? Попитайте ме! 🎭</div>
+<button id="chatBtn" aria-label="Чат">💬<i></i></button>
+<div id="chat" role="dialog" aria-label="Асистент">
+ <div class="ch-head"><div class="ch-av">Е</div><div><b>Асистент на студията</b><small>Отговаря веднага</small></div><button class="ch-x" id="chX" aria-label="Затвори">✕</button></div>
+ <div class="ch-body" id="chBody"></div>
+ <form class="ch-foot" id="chForm"><input id="chIn" autocomplete="off" placeholder="Напишете съобщение..."><button type="submit" aria-label="Изпрати">➤</button></form>
+ <div class="ch-pw">AI by <b>Hackera</b></div>
+</div>
+
+<script>
+const $=s=>document.querySelector(s);
+const AI_ENDPOINT="/api/chat", LEAD_URL="/api/lead";
+const T={hi:"Здравейте! Аз съм асистентът на Актьорски студия Димитър Еленов. С какво мога да помогна?",
+ chips:["Искам да запиша дете","Искам да запиша себе си","Лятна академия","Безплатна репетиция","Контакти"],
+ lead:"Оставям данни за контакт",name:"Вашето име",contact:"Телефон или имейл",send:"Изпрати",
+ ok:"Благодарим! Колега ще се свърже с Вас скоро.",
+ fb:"Ще се радваме да Ви помогнем. Оставете име и телефон или имейл и екипът ще Ви потърси.",
+ contact_t:"Телефон: 0886 777 788\nИмейл: elenovd@gmail.com",
+ sum:"Лятната академия 2026 предлага творчески ателиета и пърформънси за деца и тийнейджъри. Колко е годишен детето?",
+ free:"Можете да запазите безплатна репетиция през бутона най-горе в сайта или да оставите данни тук.",
+ kid:"Чудесно! На каква възраст е детето и има ли досегашен опит със сцена или камера?",
+ me:"Страхотно! Имате ли досегашен опит и какво искате да постигнете: сцена, камера или увереност пред хора?"};
+const INTENTS=[[/дете|син|дъщер|child|kid/i,"kid"],[/себе си|аз |възрастн/i,"me"],[/лят|summer|академ/i,"sum"],[/безплат|репетиц|free/i,"free"],[/контакт|телефон|имейл|phone|email/i,"contact_t"]];
+const body=$("#chBody");let started=false,busy=false;const hist=[];
+const sc=()=>body.scrollTop=body.scrollHeight;
+const esc=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+function msg(t,who){const d=document.createElement("div");d.className="msg "+who;d.innerHTML=esc(t.replace(/\s*[–—]\s*/g,", ")).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>");body.appendChild(d);sc()}
+function typing(){const d=document.createElement("div");d.className="typing";d.innerHTML="<i></i><i></i><i></i>";body.appendChild(d);sc();return d}
+const botSay=(t,ms=600)=>new Promise(r=>{const x=typing();setTimeout(()=>{x.remove();msg(t,"bot");r()},ms)});
+function chips(list,cb){const w=document.createElement("div");w.className="qr";list.forEach((x,i)=>{const b=document.createElement("button");b.textContent=x;b.onclick=()=>{w.remove();cb(x,i)};w.appendChild(b)});body.appendChild(w);sc()}
+function leadForm(ctx){const f=document.createElement("form");f.className="lead-form";
+ f.innerHTML=`<input required placeholder="${T.name}"><input required placeholder="${T.contact}"><button>${T.send}</button>`;
+ f.onsubmit=async e=>{e.preventDefault();const iv=f.querySelectorAll("input");
+  fetch(LEAD_URL,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({name:iv[0].value,contact:iv[1].value,ctx:ctx||"",lang:"bg",history:hist.slice(-6)})}).catch(()=>{});
+  f.remove();msg("✔","me");await botSay(T.ok);menu()};
+ body.appendChild(f);sc()}
+function menu(){chips(T.chips,x=>{msg(x,"me");handle(x)})}
+async function askAI(txt){busy=true;hist.push({role:"user",content:txt});const t=typing();const c=new AbortController();const to=setTimeout(()=>c.abort(),28000);
+ try{const r=await fetch(AI_ENDPOINT,{method:"POST",headers:{"content-type":"application/json"},signal:c.signal,body:JSON.stringify({messages:hist.slice(-12),model:"gemini",lang:"bg"})});
+  const j=await r.json();if(!r.ok||!j.reply)throw 0;clearTimeout(to);t.remove();hist.push({role:"assistant",content:j.reply});msg(j.reply,"bot");busy=false;
+  chips([T.lead],()=>{msg(T.lead,"me");leadForm()})}
+ catch(e){clearTimeout(to);t.remove();hist.pop();busy=false;scripted(txt)}}
+async function scripted(txt){busy=true;const h=INTENTS.find(i=>i[0].test(txt));
+ if(h){await botSay(T[h[1]]);busy=false;if(h[1]==="contact_t")menu();else leadForm(txt)}else{await botSay(T.fb);busy=false;leadForm(txt)}}
+const handle=t=>askAI(t);
+async function start(){if(started)return;started=true;await botSay(T.hi,450);menu()}
+function openChat(v){const el=$("#chat");const o=v===undefined?!el.classList.contains("open"):v;el.classList.toggle("open",o);document.body.classList.toggle("chat-open",o);
+ if(o){$("#bubble").style.display="none";start();setTimeout(()=>$("#chIn").focus(),200)}}
+$("#chatBtn").onclick=()=>openChat();$("#chX").onclick=()=>openChat(false);$("#bubble").onclick=()=>openChat(true);$("#askBtn").onclick=()=>openChat(true);
+$("#chForm").onsubmit=e=>{e.preventDefault();const v=$("#chIn").value.trim();$("#chIn").value="";if(!v||busy)return;msg(v,"me");handle(v)};
+setTimeout(()=>{if(!$("#chat").classList.contains("open"))$("#bubble").style.display="block"},7000);
+/* контактна форма */
+$("#cform").onsubmit=e=>{e.preventDefault();const f=e.target;
+ fetch(LEAD_URL,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({name:f.name.value,contact:f.contact.value,ctx:f.msg.value,lang:"bg",history:[]})}).catch(()=>{});
+ f.reset();$("#cok").style.display="block"};
+/* меню и хедър */
+$("#burger").onclick=()=>$("#menu").classList.toggle("open");
+document.querySelectorAll("#menu a").forEach(a=>a.onclick=()=>$("#menu").classList.remove("open"));
+addEventListener("scroll",()=>$("#hd").classList.toggle("solid",scrollY>40),{passive:true});
+/* поява при скрол */
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.15});
+document.querySelectorAll(".rv").forEach(n=>io.observe(n));
+</script>
+</body>
+</html>

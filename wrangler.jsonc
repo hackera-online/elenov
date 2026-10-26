@@ -1,0 +1,11 @@
+{
+  "name": "elenov-demo",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    // само папката public е публична (сайтът), нищо друго от репото
+    "directory": "./public",
+    // само /api/* минава през кода на чата, всичко останало е статичният сайт
+    "run_worker_first": ["/api/*"]
+  }
+}
